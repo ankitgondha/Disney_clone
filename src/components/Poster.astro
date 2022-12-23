@@ -1,0 +1,540 @@
+---
+// console.log("Ankit.")
+// let posters = [];
+
+// let next = document.getElementById('next');
+// let pre = document.getElementById('previous');
+// let Heading = document.getElementById('infoHeading');
+// let movieInfo = document.getElementById('movieInfo')
+// let movieImg = document.getElementById('movieImg');
+// let counter = 0;
+
+// fetch("https://api.themoviedb.org/3/tv/popular?api_key=8c28daf36301d6c8db33a4ac345c093c&language=en-US&page=1")
+//                 .then(response => response.json())
+//                 .then(data => {
+//                   console.log(data.results);
+//                   console.log(data.results.length);
+//                   // for (let index = 0; index < data.results.length; index++) {
+//                   //   posters.push(data.results[index].name);
+//                   //   // console.log(posters)
+//                   // }
+//                   Heading.innerHTML = data.results[0].name;
+//                   movieInfo.innerHTML = data.results[0].overview;
+//                   movieImg.src = `https://image.tmdb.org/t/p/original/${data.results[0].backdrop_path}`;
+
+//                   next.addEventListener("click", () => {
+//                     counter++
+//                     if (counter == 19) {
+//                       counter = 0
+//                     }
+//                     Heading.innerHTML = data.results[counter].name;
+//                     movieInfo.innerHTML = data.results[counter].overview.slice(0,200) + '...';
+//                     movieImg.src = `https://image.tmdb.org/t/p/original/${data.results[counter].backdrop_path}`;
+//                     // cat.innerHTML = posters[counter].category;
+
+//                     // movieImg.src = posters[counter].img;
+
+//                   });
+
+//                   pre.addEventListener("click", () => {
+//                     counter--
+//                     if (counter == -1) {
+//                       counter = 19
+//                     }
+//                     Heading.innerHTML = data.results[counter].name;
+//                     movieInfo.innerHTML = data.results[counter].overview.slice(0,200) + '...';
+//                     movieImg.src = `https://image.tmdb.org/t/p/original/${data.results[counter].backdrop_path}`;
+//                   // cat.innerHTML = posters[counter].category;
+//                   // movieImg.src = posters[counter].img;
+
+//               })
+
+//                 })
+//                 .catch(error => console.error(error))
+
+// const response = await fetch(
+//     "https://api.themoviedb.org/3/tv/popular?api_key=8c28daf36301d6c8db33a4ac345c093c&language=en-US&page=1"
+// );
+// const data = await response.json();
+const results = [
+    {
+        backdrop_path: "/Aa9TLpNpBMyRkD8sPJ7ACKLjt0l.jpg",
+        first_air_date: "2022-08-21",
+        genre_ids: [10765, 18, 10759],
+        id: 94997,
+        name: "House of the Dragon",
+        origin_country: ["US"],
+        original_language: "en",
+        original_name: "House of the Dragon",
+        overview:
+            "The Targaryen dynasty is at the absolute apex of its power, with more than 15 dragons under their yoke. Most empires crumble from such heights. In the case of the Targaryens, their slow fall begins when King Viserys breaks with a century of tradition by naming his daughter Rhaenyra heir to the Iron Throne. But when Viserys later fathers a son, the court is shocked when Rhaenyra retains her status as his heir, and seeds of division sow friction across the realm.",
+        popularity: 6121.785,
+        poster_path: "/z2yahl2uefxDCl0nogcRBstwruJ.jpg",
+        vote_average: 8.6,
+        vote_count: 1309,
+    },
+    {
+        backdrop_path: "/pdfCr8W0wBCpdjbZXSxnKhZtosP.jpg",
+        first_air_date: "2022-09-01",
+        genre_ids: [10765, 10759, 18],
+        id: 84773,
+        name: "The Lord of the Rings: The Rings of Power",
+        origin_country: ["US"],
+        original_language: "en",
+        original_name: "The Lord of the Rings: The Rings of Power",
+        overview:
+            "Beginning in a time of relative peace, we follow an ensemble cast of characters as they confront the re-emergence of evil to Middle-earth. From the darkest depths of the Misty Mountains, to the majestic forests of Lindon, to the breathtaking island kingdom of Númenor, to the furthest reaches of the map, these kingdoms and characters will carve out legacies that live on long after they are gone.",
+        popularity: 6106.216,
+        poster_path: "/suyNxglk17Cpk8rCM2kZgqKdftk.jpg",
+        vote_average: 7.6,
+        vote_count: 703,
+    },
+    {
+        backdrop_path: "/9GvhICFMiRQA82vS6ydkXxeEkrd.jpg",
+        first_air_date: "2022-08-18",
+        genre_ids: [35, 10765],
+        id: 92783,
+        name: "She-Hulk: Attorney at Law",
+        origin_country: ["US"],
+        original_language: "en",
+        original_name: "She-Hulk: Attorney at Law",
+        overview:
+            "Jennifer Walters navigates the complicated life of a single, 30-something attorney who also happens to be a green 6-foot-7-inch superpowered hulk.",
+        popularity: 4609.321,
+        poster_path: "/hJfI6AGrmr4uSHRccfJuSsapvOb.jpg",
+        vote_average: 7.3,
+        vote_count: 745,
+    },
+    {
+        backdrop_path: "/zymbuoBoL1i94xAOzVJF6IuWLfD.jpg",
+        first_air_date: "2018-05-02",
+        genre_ids: [10759, 18, 35],
+        id: 77169,
+        name: "Cobra Kai",
+        origin_country: ["US"],
+        original_language: "en",
+        original_name: "Cobra Kai",
+        overview:
+            "This Karate Kid sequel series picks up 30 years after the events of the 1984 All Valley Karate Tournament and finds Johnny Lawrence on the hunt for redemption by reopening the infamous Cobra Kai karate dojo. This reignites his old rivalry with the successful Daniel LaRusso, who has been working to maintain the balance in his life without mentor Mr. Miyagi.",
+        popularity: 2227.141,
+        poster_path: "/6POBWybSBDBKjSs1VAQcnQC1qyt.jpg",
+        vote_average: 8.2,
+        vote_count: 5027,
+    },
+    {
+        backdrop_path: "/uGy4DCmM33I7l86W7iCskNkvmLD.jpg",
+        first_air_date: "2013-12-02",
+        genre_ids: [16, 35, 10765, 10759],
+        id: 60625,
+        name: "Rick and Morty",
+        origin_country: ["US"],
+        original_language: "en",
+        original_name: "Rick and Morty",
+        overview:
+            "Rick is a mentally-unbalanced but scientifically gifted old man who has recently reconnected with his family. He spends most of his time involving his young grandson Morty in dangerous, outlandish adventures throughout space and alternate universes. Compounded with Morty's already unstable family life, these events cause Morty much distress at home and school.",
+        popularity: 1517.116,
+        poster_path: "/cvhNj9eoRBe5SxjCbQTkh05UP5K.jpg",
+        vote_average: 8.7,
+        vote_count: 7013,
+    },
+    {
+        backdrop_path: "/jW61BMd1ZVWPXI7Ts4iC2BTx8Qj.jpg",
+        first_air_date: "2022-04-11",
+        genre_ids: [18],
+        id: 196572,
+        name: "The Secret House",
+        origin_country: ["KR"],
+        original_language: "ko",
+        original_name: "The Secret House",
+        overview:
+            "A story about quitting being a good boy and chasing evil to the end for the sake of the mother and sister who sacrificed for themselves.\n\nA revenge play in which a dirt spoon lawyer chasing the traces of his missing mother walks into the secret surrounding him to fight the world.",
+        popularity: 1374.052,
+        poster_path: "/wNN9hJDV45BF2PiJQQVwBCiqLIl.jpg",
+        vote_average: 5.6,
+        vote_count: 13,
+    },
+    {
+        backdrop_path: "/FbUIi5WeDU5j1EtipQ274tts1E.jpg",
+        first_air_date: "2022-04-11",
+        genre_ids: [35, 18, 10751],
+        id: 197352,
+        name: "Bravo, My Life",
+        origin_country: ["KR"],
+        original_language: "ko",
+        original_name: "으라차차 내 인생",
+        overview:
+            "Even though Seo Dong Hee comes from a poor family background, she has a bright and positive personality. She dreams of becoming a designer and slowly works her way to achieve her dream. She decides to become the mother of her nephew and raise him by herself. She also gets involved with Kang Cha Yeol. Kang Cha Yeol’s father runs a big company. His father wants him to work for his company, but Kang Cha Yeol doesn't want to. He wants to go back to the U.S., but he realizes he can't do anything without his father's financial support. His father tells Kang Cha Yeol to work for 1 year at his company.",
+        popularity: 1351.117,
+        poster_path: "/3ehMAk8E9zETA9r2ZydwVrgUoP3.jpg",
+        vote_average: 7,
+        vote_count: 3,
+    },
+    {
+        backdrop_path: "/o8zk3QmHYMSC7UiJgFk81OFF1sc.jpg",
+        first_air_date: "2022-08-22",
+        genre_ids: [10766, 18],
+        id: 204095,
+        name: "Mar do Sertão",
+        origin_country: ["BR"],
+        original_language: "pt",
+        original_name: "Mar do Sertão",
+        overview: "",
+        popularity: 1290.165,
+        poster_path: "/ixgnqO8xhFMb1zr8RRFsyeZ9CdD.jpg",
+        vote_average: 5.8,
+        vote_count: 8,
+    },
+    {
+        backdrop_path: "/rIe3PnM6S7IBUmvNwDkBMX0i9EZ.jpg",
+        first_air_date: "2011-04-17",
+        genre_ids: [10765, 18, 10759],
+        id: 1399,
+        name: "Game of Thrones",
+        origin_country: ["US"],
+        original_language: "en",
+        original_name: "Game of Thrones",
+        overview:
+            "Seven noble families fight for control of the mythical land of Westeros. Friction between the houses leads to full-scale war. All while a very ancient evil awakens in the farthest north. Amidst the war, a neglected military order of misfits, the Night's Watch, is all that stands between the realms of men and icy horrors beyond.",
+        popularity: 1294.251,
+        poster_path: "/u3bZgnGQ9T01sWNhyveQz0wH0Hl.jpg",
+        vote_average: 8.4,
+        vote_count: 19157,
+    },
+    {
+        backdrop_path: "/kOkmTrD8kWLeTXcAEwctg6GwW7t.jpg",
+        first_air_date: "2017-02-20",
+        genre_ids: [10751, 35],
+        id: 91759,
+        name: "Come Home Love: Lo and Behold",
+        origin_country: ["HK"],
+        original_language: "cn",
+        original_name: "Come Home Love: Lo and Behold",
+        overview:
+            "Hung Sue Gan starting from the bottom, established his own logistics company, which is now running smoothly. His only concern now are his three daughters. His eldest daughter has immigrated overseas. His second daughter Hung Yeuk Shui has reached the marriageable age, but has no hopes for marriage anytime soon. She is constantly bickering with her younger sister Hung Sum Yue, who is an honour student, over trivial matters, causing their father to not know whether to laugh or cry. Hung Sue Yan, Hung Sue Gan's brother, moves in with the family, temporarily ending his life as a nomadic photographer. He joins Hung Yeuk Shui's company and encounters Ko Pak Fei, the director of an online shop. The two appear to be former lovers, making for lots of laughter. Since Hung Sue Yan moved in, a series of strange events have occurred in the family. Upon investigation, the source is traced to Lung Ging Fung, a promising young man who is the son of department store mogul Lung Gam Wai.",
+        popularity: 1397.057,
+        poster_path: "/lgD4j9gUGmMckZpWWRJjorWqGVT.jpg",
+        vote_average: 4.3,
+        vote_count: 10,
+    },
+    {
+        backdrop_path: "/zJNEXWx3YyWGQioCbutFd5dcNYS.jpg",
+        first_air_date: "2022-03-21",
+        genre_ids: [10766, 10759, 10751],
+        id: 157059,
+        name: "Poliana Moça",
+        origin_country: ["BR"],
+        original_language: "pt",
+        original_name: "Poliana Moça",
+        overview: "",
+        popularity: 1292.017,
+        poster_path: "/17yQZnnodzS1ZrKcpqHnQV8eQGN.jpg",
+        vote_average: 7.9,
+        vote_count: 5,
+    },
+    {
+        backdrop_path: "/x0RRnWdYeczF4KXDqW8blda7SKS.jpg",
+        first_air_date: "2022-03-28",
+        genre_ids: [18, 10766],
+        id: 158415,
+        name: "Pantanal",
+        origin_country: ["BR"],
+        original_language: "pt",
+        original_name: "Pantanal",
+        overview:
+            "After the mysterious disappearance of his father, Joventino, the cowboy José Leôncio becomes a wealthy farm owner in Pantanal. Over twenty years have passed and, bitter-hearted because of his father vanishing and the escape of his wife to Rio de Janeiro with his baby, José Leôncio has the chance to make amends with the boy, now a young man raised in the big city with very different values and habits than his own.",
+        popularity: 880.733,
+        poster_path: "/4Ru1BwcAKWtpM345dWe8YgHf35V.jpg",
+        vote_average: 5.7,
+        vote_count: 49,
+    },
+    {
+        backdrop_path: "/6Z2lcLK2E4pfsjgmYK3KHlqgHSI.jpg",
+        first_air_date: "2022-09-07",
+        genre_ids: [18],
+        id: 208925,
+        name: "Diary of a Gigolo",
+        origin_country: ["AR", "MX"],
+        original_language: "es",
+        original_name: "Diario de un Gigoló",
+        overview:
+            "A male escort's life begins to unravel when he gets involved in a client's family affairs and breaks the cardinal rule of his work: Don't fall in love.",
+        popularity: 834.791,
+        poster_path: "/xuqszO6iQXqBsD4kP2xhlBN5ggc.jpg",
+        vote_average: 8.6,
+        vote_count: 38,
+    },
+    {
+        backdrop_path: "/xZUZ9i6vVayjyhR1vRo9Bjku4h.jpg",
+        first_air_date: "2016-01-25",
+        genre_ids: [80, 10765],
+        id: 63174,
+        name: "Lucifer",
+        origin_country: ["US"],
+        original_language: "en",
+        original_name: "Lucifer",
+        overview:
+            "Bored and unhappy as the Lord of Hell, Lucifer Morningstar abandoned his throne and retired to Los Angeles, where he has teamed up with LAPD detective Chloe Decker to take down criminals. But the longer he's away from the underworld, the greater the threat that the worst of humanity could escape.",
+        popularity: 885.011,
+        poster_path: "/ekZobS8isE6mA53RAiGDG93hBxL.jpg",
+        vote_average: 8.5,
+        vote_count: 12471,
+    },
+    {
+        backdrop_path: "/hLi5umdYp8VyoQqPE9QXCUsW0Ps.jpg",
+        first_air_date: "2000-07-03",
+        genre_ids: [10764],
+        id: 911,
+        name: "Kaun Banega Crorepati",
+        origin_country: ["IN"],
+        original_language: "hi",
+        original_name: "कौन बनेगा करोड़पति",
+        overview:
+            "Hosted by India's biggest superstar, Amitabh Bachchan, one of the biggest shows is here to entertain millions, change lives and make dreams come true.",
+        popularity: 863.826,
+        poster_path: "/8srHjzgZq9V9sgsTkIwGARDyADj.jpg",
+        vote_average: 7.3,
+        vote_count: 20,
+    },
+    {
+        backdrop_path: "/eqhKMZTLcieAvoH6CBqknTTfNby.jpg",
+        first_air_date: "2022-08-05",
+        genre_ids: [10765, 18],
+        id: 90802,
+        name: "The Sandman",
+        origin_country: ["US"],
+        original_language: "en",
+        original_name: "The Sandman",
+        overview:
+            "After years of imprisonment, Morpheus — the King of Dreams — embarks on a journey across worlds to find what was stolen from him and restore his power.",
+        popularity: 880.186,
+        poster_path: "/q54qEgagGOYCq5D1903eBVMNkbo.jpg",
+        vote_average: 8.2,
+        vote_count: 920,
+    },
+    {
+        backdrop_path: "/ry9SsBPOShH7eEL2dJc1coCBh8X.jpg",
+        first_air_date: "2022-03-07",
+        genre_ids: [35, 18],
+        id: 157936,
+        name: "For You",
+        origin_country: ["PT"],
+        original_language: "pt",
+        original_name: "Por Ti",
+        overview:
+            "In the parish of Rio Meandro, two villages are at war over the construction of a dam that will submerge one of them: either Aldeia Velha or Aldeia Nova.",
+        popularity: 876.965,
+        poster_path: "/7GmlOYoR2GNiBRFs47azHIcqncR.jpg",
+        vote_average: 5.3,
+        vote_count: 10,
+    },
+    {
+        backdrop_path: "/56v2KjBlU4XaOv9rVYEQypROD7P.jpg",
+        first_air_date: "2016-07-15",
+        genre_ids: [18, 10765, 9648],
+        id: 66732,
+        name: "Stranger Things",
+        origin_country: ["US"],
+        original_language: "en",
+        original_name: "Stranger Things",
+        overview:
+            "When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.",
+        popularity: 816.184,
+        poster_path: "/49WJfeN0moxb9IPfGn8AIqMGskD.jpg",
+        vote_average: 8.6,
+        vote_count: 13661,
+    },
+    {
+        backdrop_path: "/escBySi78E2rcrphN973x7txmJq.jpg",
+        first_air_date: "2022-08-15",
+        genre_ids: [10759, 10765, 18],
+        id: 121750,
+        name: "Darna",
+        origin_country: ["PH"],
+        original_language: "tl",
+        original_name: "Darna",
+        overview:
+            "When fragments of a green crystal scatter in the city and turn people into destructive monsters, Narda embraces her destiny as Darna—the mighty protector of the powerful stone from Planet Marte.",
+        popularity: 817.437,
+        poster_path: "/CFOce6pbb3FRNaBaVdvNsCv5kR.jpg",
+        vote_average: 3,
+        vote_count: 5,
+    },
+    {
+        backdrop_path: "/7J5d7K4JBDZ4IDODNX3THLggtM5.jpg",
+        first_air_date: "2005-03-27",
+        genre_ids: [18],
+        id: 1416,
+        name: "Grey's Anatomy",
+        origin_country: ["US"],
+        original_language: "en",
+        original_name: "Grey's Anatomy",
+        overview:
+            "Follows the personal and professional lives of a group of doctors at Seattle’s Grey Sloan Memorial Hospital.",
+        popularity: 841.135,
+        poster_path: "/zPIug5giU8oug6Xes5K1sTfQJxY.jpg",
+        vote_average: 8.3,
+        vote_count: 8412,
+    },
+];
+---
+
+<div class="mainPoster">
+    <!-- <button id="previous"><i class="fa-solid fa-angle-left fa-2x"></i></button> -->
+    <div class="list">
+       
+{
+    results.map((ele)=>{
+        var img = `https://image.tmdb.org/t/p/original/${ele.backdrop_path}`;
+        return( <div class="box">
+                        <div class="info" style="width:{a}px">
+                            <h1>{ele.name}</h1>
+                            <h3>{ele.overview.slice(0,150)+"..."}</h3>
+                            
+                            <p class="date">{ele.first_air_date}</p>
+                             
+                        </div>
+                        <div class="blur"></div>
+                        <img src={img} class="list_box" alt="" />
+    
+                      
+                    </div>)
+    })
+}
+
+
+
+                    <!-- <div class="box">
+                        <div class="info" style="width:{a}px">
+                            <h1>overview</h1>
+                            <h3>The Targaryen dynasty is at the absolute apex of its power, with more than 15 dragons under their yoke. Most empires crumble from such heights. In the case of the Targaryens, their slow fall begins when King Viserys breaks with a century of tradition by naming his daughter Rhaenyra heir to the Iron Throne. But when Viserys later fathers a son, the court is shocked when Rhaenyra retains her status as his heir, and seeds of division sow friction across the realm.</h3>
+                            
+                            <p class="date">first_air_date</p>
+                             
+                        </div>
+                        <div class="blur"></div>
+                        <img src='https://image.tmdb.org/t/p/original/Aa9TLpNpBMyRkD8sPJ7ACKLjt0l.jpg' class="list_box" alt="" />
+    
+                      
+                    </div> -->
+               
+    </div>
+    <!-- <button id="next"><i class="fa-solid fa-angle-right fa-2x"></i></button> -->
+</div>
+
+<style>
+
+.date{
+    font-family: "Roboto", sans-serif;
+    color: white;
+    margin-left: 30px;
+    width: 30%;
+    padding: 10px;
+    border-radius: 10px;
+    background-color:#131927 ;
+}
+h1{
+    font-size: 40px;
+    margin-left: 30px;
+    color: white;
+    font-family: "Roboto", sans-serif;
+}
+h3{
+    width: 80%;
+    margin-left: 30px;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+}
+
+	.box{
+        display: flex;
+        flex-direction: row;
+        padding: 40px;
+     background-color: #030b17;
+     margin-left: 170px;
+    }
+	
+	.list::-webkit-scrollbar {
+		display: none;
+	}
+	.list_box {
+		max-height: 450px;
+		z-index: 1;
+		transition: 0.7s;
+		border-radius: 10px;
+	}
+	.list {
+		margin: 20px;
+		display: flex;
+		justify-content: space-between;
+		overflow-x: scroll;
+	}
+   
+
+
+
+ 
+
+
+
+
+    .blur {
+        
+        background: linear-gradient(to right, #030b17, rgba(0, 0, 0, 0));
+        
+    
+        position: relative;
+        left: 30px;
+       z-index: 10;
+        width: 200px;
+    }
+
+  
+
+  
+
+   
+
+    @media only screen and (max-width: 700px) {
+        #movieImg {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            /* height: 500px; */
+            object-fit: contain;
+        }
+        .posterImg {
+            background-color: #121926;
+        }
+        .poster {
+            height: auto;
+        }
+        .navName {
+            display: none;
+        }
+        #logo {
+            /* padding: 15px 5px 0px 10px; */
+            height: 40px;
+        }
+        .navbar {
+            justify-content: space-around;
+            align-items: center;
+        }
+        .info {
+            display: none;
+        }
+        .blur {
+            display: none;
+        }
+
+        #next {
+            /* margin: 20px; */
+            padding: 5px;
+            font-size: 12px;
+        }
+        #previous {
+            padding: 5px;
+            font-size: 12px;
+        }
+    }
+</style>
